@@ -1,0 +1,8 @@
+$primary: #e0e0e0;
+$dark: #282829;
+$input-btn-focus-box-shadow: none;
+$offcanvas-vertical-height: 50vh;
+.btn-check:focus + .btn, .btn:focus {
+  box-shadow: none !important;
+}
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

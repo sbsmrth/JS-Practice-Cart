@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Cart</title>
+    <link rel="icon" href="icon.png">
+    <script src="https://kit.fontawesome.com/544a71c5a5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="py-5">
+        <nav class="nav fixed-top d-flex justify-content-center align-items-center 
+        w-100">
+          <i class="fa-solid fa-cart-shopping fa-lg nav__icon" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" role="button"></i>
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+          aria-labelledby="offcanvasBottomLabel">
+          <div class="offcanvas-header py-4">
+            <div class="w-100 header-content d-none">
+              <span><b>Item</b></span>
+              <span><b>Quantity</b></span>
+              <span><b>Price</b></span>
+              <span><b>Inc/Dec</b></span>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>      
+          <div class="offcanvas-body pt-0" id="off-body">
+            <p class="text-center">
+              <i>No products yet, start shopping now (:</i>
+            </p>
+          </div>
+          <div class="footer py-3 ms-3 px-4" id="offcanvas-footer">
+          </div> 
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="container">
+          <div class="row" id="cards-row">
+          </div>
+        </section>
+      </main>
+      <template id="template-card">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card mb-4">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Card title</h5>
+              <p class="card-text text-center">Card price</p>
+              <a href="#" class="btn btn-primary d-block">Buy</a>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template id="template-offcanvas">
+        <div class="w-100 body-content mt-2">
+          <span class="title">Title</span>
+          <span class="quantity ms-4">Quantity</span>
+          <span class="price">Price</span>
+          <div class="mb-1 ms-2">
+            <button type="button" class="btn btn-primary btn-sm">+</button>
+            <button type="button" class="btn btn-dark btn-sm">-</button>
+          </div>
+        </div>
+      </template>
+      <template id="template-footer">
+        <div class="footer-start me-3">
+          <span>Total Products: </span>
+          <span class="total-products">12</span>
+        </div>
+        <div class="footer-end me-3">
+          <span>Total Amount:</span>
+          <span class="total-amount">135000</span>
+        </div>
+        <button type="button" class="btn btn-dark btn-sm">Clear Cart</button>
+      </template>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
