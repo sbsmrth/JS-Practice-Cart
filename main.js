@@ -1,6 +1,6 @@
 import './style.css'
-import './styles/styles.css'
 import './node_modules/bootstrap/dist/js/bootstrap.min.js'
+import './custom_styles.scss'
 
 const templateCard = document.getElementById('template-card').content;
 const templateOff = document.getElementById('template-offcanvas').content;

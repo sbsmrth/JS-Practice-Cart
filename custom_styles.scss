@@ -5,4 +5,4 @@ $offcanvas-vertical-height: 50vh;
 .btn-check:focus + .btn, .btn:focus {
   box-shadow: none !important;
 }
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './node_modules/bootstrap/scss/bootstrap.scss';
