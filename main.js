@@ -36,13 +36,28 @@ const manageMutation = (todo, id) => {
   showCart();
 }
 
+const manageTotalItems = ({value, type}) => {
+  const totalItems = document.getElementById('totalItems');
+  const currentValue = +(totalItems.textContent).replace('(', '').replace(')', '');
+
+  if (type === 'reset') return totalItems.textContent = '(0)';
+
+  if (currentValue) {
+    totalItems.textContent = `(${currentValue + value})`;
+  } else {
+    totalItems.textContent = `(${1})`;
+  }
+}
+
 offcanvasBody.addEventListener('click', (event) => {
   if(event.target.classList.contains('btn-primary')) {
-    manageMutation('increase', event.target.dataset.id)
+    manageMutation('increase', event.target.dataset.id);
+    manageTotalItems({value: 1});
   }
 
   if(event.target.classList.contains('btn-dark')) {
-    manageMutation('decrease', event.target.dataset.id)
+    manageMutation('decrease', event.target.dataset.id);
+    manageTotalItems({value: -1});
   }
 
   event.stopPropagation();
@@ -87,6 +102,8 @@ const addProduct = (event) => {
       price: parent.querySelector('.card-text').textContent,
       quantity: 1,
     });
+
+    manageTotalItems({value: 1});
   }
 
   event.stopPropagation();
@@ -143,6 +160,7 @@ const showFooter = () => {
 offcanvasFooter.addEventListener('click', (event) => {
   if(event.target.classList.contains('btn')) {
     cart = {};
+    manageTotalItems({type: 'reset'});
     showCart();
   }
 });
